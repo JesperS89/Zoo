@@ -3,7 +3,6 @@ import { useOutletContext, useParams } from "react-router-dom";
 import { IAnimal } from "../../../models/IAnimal";
 import { MyContext } from "../zoo";
 import "./animaldetails.scss";
-import { motion } from "framer-motion";
 
 export const AnimalDetails = () => {
   const { animals, setIsFed, countTimeSinceFed } =
@@ -35,14 +34,14 @@ export const AnimalDetails = () => {
               <span>
                 {" "}
                 är hungrig
-                {Date.now() - +new Date(a.lastFed) > 10000 && (
+                {Date.now() - +new Date(a.lastFed) > 14400000 && (
                   <span> och har inte ätit på över 10 sekunder</span>
                 )}
               </span>
             )}
           </p>
           {!a.isFed && (
-            <motion.button
+            <button
               onClick={() => {
                 handleClick(a);
               }}
@@ -51,7 +50,7 @@ export const AnimalDetails = () => {
               <span className="glowing-txt">
                 M<span className="faulty-letter">a</span>ta {a.name}
               </span>
-            </motion.button>
+            </button>
           )}
         </div>
       );

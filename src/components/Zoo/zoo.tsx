@@ -17,7 +17,7 @@ export const Zoo = () => {
   const countTimeSinceFed = () => {
     animals.map((a) => {
       if (a.isFed === true)
-        if (Date.now() - +new Date(a.lastFed) > 3000) {
+        if (Date.now() - +new Date(a.lastFed) > 10800000) {
           a.isFed = false;
           let copy = [...animals];
           setAnimals(copy);
