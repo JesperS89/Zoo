@@ -35,7 +35,7 @@ export const AnimalDetails = () => {
                 {" "}
                 är hungrig
                 {Date.now() - +new Date(a.lastFed) > 14400000 && (
-                  <span> och har inte ätit på över 10 sekunder</span>
+                  <span> och har inte ätit på över 4 timmar</span>
                 )}
               </span>
             )}
